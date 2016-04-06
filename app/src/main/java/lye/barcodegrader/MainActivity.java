@@ -27,9 +27,10 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     static final String EXTRA_MESSAGE =  "lye.barcodegrader.EXTRA_MESSAGE";
+    static final String EXTRA_MESSAGE_2 =  "lye.barcodegrader.EXTRA_MESSAGE_2";
 
     private static final int PICKFILE_RESULT_CODE = 1;
-    private static final int MANUAL_MODE_CODE = 2;
+    static final int MANUAL_MODE_CODE = 2;
 
     private String path = "(sin archivo)";
     private TextView archivoCargado;
@@ -131,8 +132,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case MANUAL_MODE_CODE:
-                    //TODO ¿Actualizar nuestro csvArray aquí? (Ver como se haría el código en la otra actividad)
-                    //csvArray = (ArrayList<String[]>) int1.getSerializableExtra(MainActivity.EXTRA_MESSAGE);
+
+                    //Actualizamos nuestro csvArray con el que se devuelve ya modificado
+                    csvArray.clear();
+                    csvArray = (ArrayList<String[]>) getIntent().getSerializableExtra(EXTRA_MESSAGE_2);
                 break;
 
         }
@@ -155,31 +158,36 @@ public class MainActivity extends AppCompatActivity {
         Date date = new Date();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd_HH-mm");
 
-        //TODO Comrpobar si hay archvio abierto antes de hacer nada
         //TODO ¿Conseguir que si abres un archivo ya corregido, no ponga otra coletilla -graded al final de la anterior?
-        String outPath = path.substring(0, path.length()-4) +"-graded_" + format.format(date) + ".csv";
-        Writer outputFile = null;
+        if (!path.equals("(sin archivo)")) {
+            //Si hay un archivo cargado
+            String outPath = path.substring(0, path.length()-4) +"-graded_" + format.format(date) + ".csv";
+            Writer outputFile = null;
 
-        try {
-            outputFile = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outPath), "UTF-8"));
-            int nfil = csvArray.size();
-            int ncol = csvArray.get(0).length;
+            try {
+                outputFile = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outPath), "UTF-8"));
+                int nfil = csvArray.size(); //NullPointerException aquí tras haber hecho Modo Manual
+                int ncol = csvArray.get(0).length;
 
-            for (int i = 0; i < nfil; i++){
-                for(int j = 0; j < ncol; j++){
-                    outputFile.write(csvArray.get(i)[j]);
-                    if (j != ncol - 1)
-                        outputFile.write(",");
+                for (int i = 0; i < nfil; i++){
+                    for(int j = 0; j < ncol; j++){
+                        outputFile.write(csvArray.get(i)[j]);
+                        if (j != ncol - 1)
+                            outputFile.write(",");
+                    }
+                    outputFile.write("\r\n");
                 }
-                outputFile.write("\r\n");
+
+                outputFile.close();
+
+                Toast.makeText(getApplicationContext(), "Fichero csv creado en " + outPath, Toast.LENGTH_LONG).show();
+
+            }catch (Exception e) {
+                e.printStackTrace();
             }
-
-            outputFile.close();
-
-            Toast.makeText(getApplicationContext(), "Fichero csv creado en " + outPath, Toast.LENGTH_LONG).show();
-
-        }catch (Exception e) {
-            e.printStackTrace();
+        } else {
+            //Si no se ha cargado ningún archivo aún
+            Toast.makeText(getApplicationContext(), "No se ha cargado ningún archivo", Toast.LENGTH_LONG).show();
         }
         //System.out.println(outPath);
 
@@ -187,8 +195,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startManualMode(View v)
     {
-        /*
-        //Comrpobamos si se ha cargado algún archivo
+                //Comrpobamos si se ha cargado algún archivo
         if(!path.equals("(sin archivo)")) {
             //TODO hacer método aquí
             //http://stackoverflow.com/questions/10407159/how-to-manage-startactivityforresult-on-android
@@ -202,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(), "No se ha cargado ningún archivo", Toast.LENGTH_LONG).show();
         }
-        */
+
     }
 
 
