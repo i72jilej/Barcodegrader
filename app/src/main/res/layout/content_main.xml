@@ -17,7 +17,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="0.9">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -31,7 +32,8 @@
                 android:id="@+id/archivoCargado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(sin archivo)"/>
+                android:singleLine="false"
+                android:text="(sin archivo)" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,15 +82,16 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        >
+        android:layout_weight="0.1"
+        android:measureWithLargestChild="false">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Modo manual"
             android:onClick="startManualMode"/>
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Modo automático"/>
 

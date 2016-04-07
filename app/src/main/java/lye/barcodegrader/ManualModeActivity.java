@@ -10,10 +10,7 @@ import java.util.ArrayList;
 
 public class ManualModeActivity extends AppCompatActivity {
 
-    private ArrayList<String[]> csvArray = new ArrayList<String[]>();
-
-    private TextView testTV;
-
+    private ArrayList<String[]> csvArray2 = new ArrayList<String[]>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +18,15 @@ public class ManualModeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_manual_mode);
 
         //Recibiendo intent
-        csvArray = (ArrayList<String[]>) getIntent().getSerializableExtra(MainActivity.EXTRA_MESSAGE);
+        csvArray2 = (ArrayList<String[]>) getIntent().getSerializableExtra(MainActivity.EXTRA_MESSAGE);
 
         //TODO TEST (BORRAR LUEGO)
+        TextView testTV;
         testTV = (TextView) findViewById(R.id.testTextBox);
-        testTV.setText(csvArray.get(0)[0]);
-        csvArray.get(0)[0] = "MODIFICADO";
+        testTV.setText(csvArray2.get(0)[0]);
+        System.out.println(MainActivity.EXTRA_MESSAGE);
+        System.out.println(MainActivity.EXTRA_MESSAGE_2);
+        csvArray2.get(0)[0] = "MODIFICADO";
         //END TEST
     }
 
@@ -34,7 +34,7 @@ public class ManualModeActivity extends AppCompatActivity {
     public void testReturn(View v) {
         Intent returnIntent = new Intent();
 
-        returnIntent.putExtra(MainActivity.EXTRA_MESSAGE_2, csvArray);
+        returnIntent.putExtra(MainActivity.EXTRA_MESSAGE_2, csvArray2);
         setResult(MainActivity.MANUAL_MODE_CODE, returnIntent);
         finish();
     }

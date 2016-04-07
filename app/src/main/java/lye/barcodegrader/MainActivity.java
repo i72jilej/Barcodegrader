@@ -134,8 +134,13 @@ public class MainActivity extends AppCompatActivity {
             case MANUAL_MODE_CODE:
 
                     //Actualizamos nuestro csvArray con el que se devuelve ya modificado
+                    System.out.println("ESTAMOS EN MANUAL_MODE_CODE");
+                    System.out.println(csvArray.size());
                     csvArray.clear();
-                    csvArray = (ArrayList<String[]>) getIntent().getSerializableExtra(EXTRA_MESSAGE_2);
+                    System.out.println(csvArray.size());
+                    csvArray = (ArrayList<String[]>) data.getSerializableExtra(EXTRA_MESSAGE_2); //TODO ALGO FALLA AQUÏ
+                    System.out.println(csvArray.size());
+
 
                 break;
 
