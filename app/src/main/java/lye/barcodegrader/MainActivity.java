@@ -136,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                     //Actualizamos nuestro csvArray con el que se devuelve ya modificado
                     csvArray.clear();
                     csvArray = (ArrayList<String[]>) getIntent().getSerializableExtra(EXTRA_MESSAGE_2);
+
                 break;
 
         }
@@ -197,11 +198,10 @@ public class MainActivity extends AppCompatActivity {
     {
                 //Comrpobamos si se ha cargado algún archivo
         if(!path.equals("(sin archivo)")) {
-            //TODO hacer método aquí
             //http://stackoverflow.com/questions/10407159/how-to-manage-startactivityforresult-on-android
             Intent int1 = new Intent(this, ManualModeActivity.class);
 
-            //TODO caargar Intent (¿Solo csvArray?)
+            //TODO cargar Intent (¿Solo csvArray?)
             int1.putExtra(EXTRA_MESSAGE, csvArray);
 
             startActivityForResult(int1, MANUAL_MODE_CODE);
