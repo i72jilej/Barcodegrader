@@ -20,6 +20,7 @@ public class ManualModeActivity extends AppCompatActivity {
         //Recibiendo intent
         csvArray2 = (ArrayList<String[]>) getIntent().getSerializableExtra(MainActivity.EXTRA_MESSAGE);
 
+        /*
         //TODO TEST (BORRAR LUEGO)
         TextView testTV;
         testTV = (TextView) findViewById(R.id.testTextBox);
@@ -28,8 +29,10 @@ public class ManualModeActivity extends AppCompatActivity {
         System.out.println(MainActivity.EXTRA_MESSAGE_2);
         csvArray2.get(0)[0] = "MODIFICADO";
         //END TEST
+        */
     }
 
+    /*
     //TODO TEST (BORRAR LUEGO)
     public void testReturn(View v) {
         Intent returnIntent = new Intent();
@@ -39,4 +42,5 @@ public class ManualModeActivity extends AppCompatActivity {
         finish();
     }
     //END TEST
+    */
 }

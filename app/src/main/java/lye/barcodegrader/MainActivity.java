@@ -27,7 +27,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     static final String EXTRA_MESSAGE =  "lye.barcodegrader.EXTRA_MESSAGE";
-    static final String EXTRA_MESSAGE_2 =  "lye.barcodegrader.EXTRA_MESSAGE_2";
+    static final String EXTRA_MESSAGE_2 =  "lye.barcodegrader.EXTRA_MESSAGE_2"; //TODO Probar si funciona con el mismo mensaje en ambos intents
 
     private static final int PICKFILE_RESULT_CODE = 1;
     static final int MANUAL_MODE_CODE = 2;
@@ -133,14 +133,10 @@ public class MainActivity extends AppCompatActivity {
 
             case MANUAL_MODE_CODE:
 
-                    //Actualizamos nuestro csvArray con el que se devuelve ya modificado
-                    System.out.println("ESTAMOS EN MANUAL_MODE_CODE");
-                    System.out.println(csvArray.size());
-                    csvArray.clear();
-                    System.out.println(csvArray.size());
-                    csvArray = (ArrayList<String[]>) data.getSerializableExtra(EXTRA_MESSAGE_2); //TODO ALGO FALLA AQUÏ
-                    System.out.println(csvArray.size());
-
+                //Actualizamos nuestro csvArray con el que se devuelve ya modificado
+                //System.out.println("ESTAMOS EN MANUAL_MODE_CODE");
+                csvArray.clear();//¿sobra esto?
+                csvArray = (ArrayList<String[]>) data.getSerializableExtra(EXTRA_MESSAGE_2);
 
                 break;
 
