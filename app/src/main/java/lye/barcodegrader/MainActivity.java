@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
             Intent int1 = new Intent(this, ManualModeActivity.class);
 
             //TODO cargar Intent (¿Solo csvArray?)
-            int1.putExtra(EXTRA_MESSAGE, csvArray);
+            int1.putExtra(EXTRA_MESSAGE_2, csvArray);
 
             startActivityForResult(int1, MANUAL_MODE_CODE);
 
