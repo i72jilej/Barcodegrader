@@ -95,7 +95,10 @@ public class ManualModeActivity extends AppCompatActivity {
                 String scanContent = scanningResult.getContents();
                 //System.out.println(scanContent);
                 filaAlumno = buscarAlumno(scanContent);
-                System.out.println(filaAlumno);
+                //TODO Comprobar si se ha devuelto que el alumno no existe
+                //TODO Recoger datos del alumno
+
+                //System.out.println(filaAlumno);
 
 
             } else {
@@ -112,7 +115,7 @@ public class ManualModeActivity extends AppCompatActivity {
 
         String correo = codigo + "@uco.es";
 
-        while (fila < csvArray2.size() && csvArray2.get(fila)[2] != correo) {
+        while (fila < csvArray2.size() && !csvArray2.get(fila)[2].equals(correo)) {
             System.out.println(fila + " - " + csvArray2.get(fila)[2] + " =? " + correo + "\n\r");
             System.out.println(csvArray2.get(fila)[2].length() + " - " + correo.length() + "\n\r");
             fila++;
