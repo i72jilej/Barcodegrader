@@ -1,10 +1,11 @@
 package lye.barcodegrader;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -30,6 +31,26 @@ public class ManualModeActivity extends AppCompatActivity {
         csvArray2.get(0)[0] = "MODIFICADO";
         //END TEST
         */
+    }
+
+    @Override
+    public void onBackPressed(){
+        new AlertDialog.Builder(this)
+            .setIcon(android.R.drawable.ic_dialog_alert)
+            .setTitle("Confirmar cierre")
+            .setMessage("¿Seguro que quieres volver al menú principal?")
+            .setPositiveButton("Sí", new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent returnIntent = new Intent();
+                    // csvArray2.get(0)[0] = "MODIFICADO"; //TEST
+                    //System.out.println("BACK");
+                    returnIntent.putExtra(MainActivity.EXTRA_MESSAGE_2, csvArray2);
+                    setResult(MainActivity.MANUAL_MODE_CODE, returnIntent);
+                    finish();
+                }
+            }).setNegativeButton("No", null)
+            .show();
     }
 
     /*
