@@ -5,7 +5,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import java.util.ArrayList;
 
@@ -51,6 +56,26 @@ public class ManualModeActivity extends AppCompatActivity {
                 }
             }).setNegativeButton("No", null)
             .show();
+    }
+
+    public void manualScan (View v){
+        System.out.println("ESCANEAR");
+        IntentIntegrator scanIntegrator = new IntentIntegrator(this);
+
+        scanIntegrator.initiateScan(); //El resultado lo pilla onActivityResult
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+
+        if (scanningResult != null) {
+            //Aquí recibimos los datos
+            String codigoAlumno = scanningResult.getContents();
+            System.out.println(codigoAlumno);
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Escaneo cancelado", Toast.LENGTH_LONG).show();
+        }
     }
 
     /*
