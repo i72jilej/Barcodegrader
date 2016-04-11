@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     //private CSVReader csvFile; //Declarado dentro de OnActivityResult (¿No va a hacer falta fuera, se trabaja con la array?)
     private ArrayList<String[]> csvArray = new ArrayList<String[]>();
 
-
+    //TODO Pedir confirmación al cerrar la aplicación
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -197,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startManualMode(View v)
     {
-                //Comrpobamos si se ha cargado algún archivo
+        //Comrpobamos si se ha cargado algún archivo
         if(!path.equals("(sin archivo)")) {
             //http://stackoverflow.com/questions/10407159/how-to-manage-startactivityforresult-on-android
             Intent int1 = new Intent(this, ManualModeActivity.class);

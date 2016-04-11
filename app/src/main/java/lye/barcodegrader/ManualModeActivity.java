@@ -20,13 +20,13 @@ public class ManualModeActivity extends AppCompatActivity {
 
     private ArrayList<String[]> csvArray2 = new ArrayList<String[]>();
 
-    TextView nombreAlumno;
-    TextView codigoAlumno;
-    TextView notaActual;
-    TextView notaMax;
+    private TextView nombreAlumno;
+    private TextView codigoAlumno;
+    private TextView notaActual;
+    private TextView notaMax;
     //TextView fechaEdicion;
 
-    int filaAlumno;
+    private int filaAlumno = 0;
 
 
     @Override
@@ -59,16 +59,6 @@ public class ManualModeActivity extends AppCompatActivity {
         findViewById(R.id.notaBorrar).setOnClickListener(mGlobal_OnClickListener);
 
 
-        /*
-        //TODO TEST (BORRAR LUEGO)
-        TextView testTV;
-        testTV = (TextView) findViewById(R.id.testTextBox);
-        testTV.setText(csvArray2.get(0)[0]);
-        System.out.println(MainActivity.EXTRA_MESSAGE);
-        System.out.println(MainActivity.EXTRA_MESSAGE_2);
-        csvArray2.get(0)[0] = "MODIFICADO";
-        //END TEST
-        */
     }
 
     @Override
@@ -108,8 +98,7 @@ public class ManualModeActivity extends AppCompatActivity {
                 String scanContent = scanningResult.getContents();
                 //System.out.println(scanContent);
                 filaAlumno = buscarAlumno(scanContent);
-                //TODO Comprobar si se ha devuelto que el alumno no existe
-                //TODO Recoger datos del alumno
+
                 if (filaAlumno == 0) {
                     Toast.makeText(getApplicationContext(), "Alumno no encontrado en el fichero cargado", Toast.LENGTH_LONG).show();
                 }
@@ -157,52 +146,29 @@ public class ManualModeActivity extends AppCompatActivity {
     final View.OnClickListener mGlobal_OnClickListener = new View.OnClickListener() {
         public void onClick(final View v) {
             Button boton = (Button) findViewById(v.getId());
-            //Toast.makeText(getApplicationContext(), boton.getText(), Toast.LENGTH_SHORT).show();
             String notaPantalla;
             String notaCSV;
 
-            //TODO Comprobar si hay un alumno cargado
-            if (boton.getText() == "Borrar") {
-                //FIXME Al elegir borrar, aparece "Borrar" en pantalla
-                notaPantalla = "-";
-                notaCSV = "";
+            if(filaAlumno != 0){
+                if (boton.getText().equals("Borrar")) {
+                    notaPantalla = "-";
+                    notaCSV = "";
+                    notaActual.setText(notaPantalla);
+                    csvArray2.get(filaAlumno)[4] = notaCSV;
+                } else {
+                    if(Integer.parseInt(boton.getText().toString()) <= Integer.parseInt(notaMax.getText().toString())) {
+                        notaPantalla = boton.getText().toString();
+                        notaCSV = notaPantalla;
+                        notaActual.setText(notaPantalla);
+                        csvArray2.get(filaAlumno)[4] = notaCSV;
+                    }
+                }
+
+
             } else {
-                notaPantalla = boton.getText().toString();
-                notaCSV = notaPantalla;
+                Toast.makeText(getApplicationContext(), "No se ha cargado ningún alumno", Toast.LENGTH_LONG).show();
             }
 
-            notaActual.setText(notaPantalla);
-            csvArray2.get(filaAlumno)[4] = notaCSV;
-
-            /*switch(v.getId()) {
-
-
-                case R.id.nota0:
-                    //Inform the user the button1 has been clicked
-                    Toast.makeText(getApplicationContext(), "Nota0 click", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.nota1:
-                    //Inform the user the button2 has been clicked
-                    Toast.makeText(getApplicationContext(), "Nota1 click.", Toast.LENGTH_SHORT).show();
-                    break;
-            }*/
-            System.out.println("COMUN");
         }
     };
-
-
-
-
-
-    /*
-    //TODO TEST (BORRAR LUEGO)
-    public void testReturn(View v) {
-        Intent returnIntent = new Intent();
-
-        returnIntent.putExtra(MainActivity.EXTRA_MESSAGE_2, csvArray2);
-        setResult(MainActivity.MANUAL_MODE_CODE, returnIntent);
-        finish();
-    }
-    //END TEST
-    */
 }
