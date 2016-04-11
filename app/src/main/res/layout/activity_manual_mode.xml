@@ -86,6 +86,7 @@
                 android:layout_height="wrap_content"
                 android:text="-"/>
         </LinearLayout>
+        <!--
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -100,6 +101,7 @@
                 android:layout_height="wrap_content"
                 android:text="-"/>
         </LinearLayout>
+        -->
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -118,16 +120,19 @@
             android:orientation="horizontal"
             android:weightSum="3">
             <Button
+                android:id="@+id/nota1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
                 android:layout_weight="1"/>
             <Button
+                android:id="@+id/nota2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2"
                 android:layout_weight="1"/>
             <Button
+                android:id="@+id/nota3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3"
@@ -139,16 +144,19 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
+                android:id="@+id/nota4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4"
                 android:layout_weight="1"/>
             <Button
+                android:id="@+id/nota5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="5"
                 android:layout_weight="1"/>
             <Button
+                android:id="@+id/nota6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6"
@@ -160,16 +168,19 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
+                android:id="@+id/nota7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="7"
                 android:layout_weight="1"/>
             <Button
+                android:id="@+id/nota8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="8"
                 android:layout_weight="1"/>
             <Button
+                android:id="@+id/nota9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="9"
@@ -181,16 +192,19 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
+                android:id="@+id/nota0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
                 android:layout_weight="1"/>
             <Button
+                android:id="@+id/nota10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
                 android:layout_weight="1"/>
             <Button
+                android:id="@+id/notaBorrar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Borrar"
