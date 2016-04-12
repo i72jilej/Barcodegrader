@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.opencsv.CSVReader;
 
 import java.io.BufferedWriter;
@@ -40,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
     //private CSVReader csvFile; //Declarado dentro de OnActivityResult (¿No va a hacer falta fuera, se trabaja con la array?)
     private ArrayList<String[]> csvArray = new ArrayList<String[]>();
 
+    IntentIntegrator autoModeIntegrator;
+    private ArrayList<String> autoModeArray = new ArrayList<String>();
+
     //TODO Pedir confirmación al cerrar la aplicación
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         archivoCargado = (TextView) findViewById(R.id.archivoCargado);
         nAlumnos = (TextView) findViewById(R.id.nAlum);
         notaMax = (TextView) findViewById(R.id.notaMax);
+
+        autoModeIntegrator = new IntentIntegrator(this);
 
     }
 
@@ -80,8 +87,9 @@ public class MainActivity extends AppCompatActivity {
         // TODO Fix no activity available
         CSVReader csvFile = null;
 
-        if (data == null)
-            return;
+        //COmentado para que el swtich sea evaluado al hacer cancelar
+        //if (data == null)
+            //return;
         switch (requestCode) {
             case PICKFILE_RESULT_CODE:
                 if (resultCode == RESULT_OK) {
@@ -109,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                                     //System.out.println(csvArray.get(0)[0]); //Para mostrar una cadena en concreto: (0) para la linea, [0] para el elemento
 
                                 }
+                                System.out.println(csvArray.get(1)[0] + " - " + csvArray.get(1)[1] + " - " + csvArray.get(1)[2] + " - " + csvArray.get(1)[3] + " - " + csvArray.get(1)[4] + " - " + csvArray.get(1)[5] + " - " + csvArray.get(1)[6] + " - " + csvArray.get(1)[7] + " - ");
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -140,7 +149,43 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
 
+            case IntentIntegrator.REQUEST_CODE:
+                //http://stackoverflow.com/questions/15892461/how-to-trigger-bulk-mode-scan-in-zxing
+                if (resultCode == RESULT_OK) {
+                    System.out.println("OK");
+                    IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+                    String codigo = intentResult.getContents(); //Pescando el código escaneado en esta vuelta
+
+                    autoModeArray.add(codigo);
+
+                    autoModeIntegrator.initiateScan(); //Relanzar escaner
+
+                } else if (resultCode == RESULT_CANCELED) {
+                    System.out.println("BACK");
+                    int j;
+                    String correo;
+                    for (int i = 1; i < csvArray.size(); i++) { //Desde i = 1 para saltarnos la fila con los encabezados de columna
+                        //System.out.println(csvArray.get(i)[2]);
+                        j = 0;
+                        while(j < autoModeArray.size()){
+                            //System.out.println("-->" + autoModeArray.get(j));
+                            if(csvArray.get(i)[2].equals(autoModeArray.get(j) + "@uco.es")) {
+                                //System.out.println("COINCIDE");
+                                csvArray.get(i)[4] = csvArray.get(1)[5];
+                                break;
+                            }
+                            j++;
+                        }
+                    }
+
+                }
+
+                break;
+
+
         }
+        //System.out.println(RESULT_OK + " - " + RESULT_CANCELED);
+        //System.out.println(requestCode + " - " + IntentIntegrator.REQUEST_CODE);
     }
 
     public void loadCsv(View v) {
@@ -202,7 +247,6 @@ public class MainActivity extends AppCompatActivity {
             //http://stackoverflow.com/questions/10407159/how-to-manage-startactivityforresult-on-android
             Intent int1 = new Intent(this, ManualModeActivity.class);
 
-            //TODO cargar Intent (¿Solo csvArray?)
             int1.putExtra(EXTRA_MESSAGE_2, csvArray);
 
             startActivityForResult(int1, MANUAL_MODE_CODE);
@@ -211,6 +255,15 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "No se ha cargado ningún archivo", Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    public void startAutoMode(View v) {
+        //Comrpobamos si se ha cargado algún archivo
+        if(!path.equals("(sin archivo)")) {
+            autoModeIntegrator.initiateScan();
+        } else {
+            Toast.makeText(getApplicationContext(), "No se ha cargado ningún archivo", Toast.LENGTH_LONG).show();
+        }
     }
 
 
