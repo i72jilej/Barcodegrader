@@ -39,7 +39,7 @@
     <list default="true" id="c2efc095-160a-460d-a3d4-effb2ce833f8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/lye/barcodegrader/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/lye/barcodegrader/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="Barcodegrader.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,14 +70,13 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/lye/barcodegrader/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8038194">
-              <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
+            <state vertical-scroll-proportion="-0.6504348">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1595#1605#0" expanded="true" />
-                <element signature="e#1710#1718#0" expanded="true" />
-                <element signature="e#11604#11823#0" expanded="true" />
-                <element signature="e#11822#11823#0" expanded="true" />
+                <element signature="e#1565#1575#0" expanded="true" />
+                <element signature="e#1680#1688#0" expanded="true" />
+                <element signature="e#11574#11793#0" expanded="true" />
+                <element signature="e#11792#11793#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1887,7 +1886,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="cfcca9e4" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_23_x86" />
-    <property name="device.picker.selection" value="cfcca9e4" />
+    <property name="device.picker.selection" value="Nexus_5_API_23_x86" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
@@ -2240,7 +2239,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460486591066</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Quitado el menú de opciones al inicio">
+      <created>1460487855571</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1460487855571</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2256,20 +2261,20 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.7633262" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.7601279" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.48507464" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.28144988" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32739422" sideWeight="0.7366738" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.717484" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22068231" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.69616205" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.76492536" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.48933902" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.6934968" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32850778" sideWeight="0.7553305" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.47867805" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32739422" sideWeight="0.26332623" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32850778" sideWeight="0.24466951" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2312,7 +2317,8 @@
     <MESSAGE value="Terminado el modo manual&#10;Queda el desactivar botones" />
     <MESSAGE value="Terminado el modo automático&#10;Falla el tema de las , al crear el archivo csv" />
     <MESSAGE value="Arreglado problema de , en el csv&#10;Añadido diálogo de confirmación al cierre." />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglado problema de , en el csv&#10;Añadido diálogo de confirmación al cierre." />
+    <MESSAGE value="Quitado el menú de opciones al inicio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quitado el menú de opciones al inicio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2334,11 +2340,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1605#0" expanded="true" />
-            <element signature="e#1710#1718#0" expanded="true" />
-            <element signature="e#11604#11823#0" expanded="true" />
-            <element signature="e#11822#11823#0" expanded="true" />
+            <element signature="e#1565#1575#0" expanded="true" />
+            <element signature="e#1680#1688#0" expanded="true" />
+            <element signature="e#11574#11793#0" expanded="true" />
+            <element signature="e#11792#11793#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2390,11 +2395,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1605#0" expanded="true" />
-            <element signature="e#1710#1718#0" expanded="true" />
-            <element signature="e#11604#11823#0" expanded="true" />
-            <element signature="e#11822#11823#0" expanded="true" />
+            <element signature="e#1565#1575#0" expanded="true" />
+            <element signature="e#1680#1688#0" expanded="true" />
+            <element signature="e#11574#11793#0" expanded="true" />
+            <element signature="e#11792#11793#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2446,11 +2450,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1605#0" expanded="true" />
-            <element signature="e#1710#1718#0" expanded="true" />
-            <element signature="e#11604#11823#0" expanded="true" />
-            <element signature="e#11822#11823#0" expanded="true" />
+            <element signature="e#1565#1575#0" expanded="true" />
+            <element signature="e#1680#1688#0" expanded="true" />
+            <element signature="e#11574#11793#0" expanded="true" />
+            <element signature="e#11792#11793#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2502,11 +2505,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1605#0" expanded="true" />
-            <element signature="e#1710#1718#0" expanded="true" />
-            <element signature="e#11604#11823#0" expanded="true" />
-            <element signature="e#11822#11823#0" expanded="true" />
+            <element signature="e#1565#1575#0" expanded="true" />
+            <element signature="e#1680#1688#0" expanded="true" />
+            <element signature="e#11574#11793#0" expanded="true" />
+            <element signature="e#11792#11793#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2558,11 +2560,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1605#0" expanded="true" />
-            <element signature="e#1710#1718#0" expanded="true" />
-            <element signature="e#11604#11823#0" expanded="true" />
-            <element signature="e#11822#11823#0" expanded="true" />
+            <element signature="e#1565#1575#0" expanded="true" />
+            <element signature="e#1680#1688#0" expanded="true" />
+            <element signature="e#11574#11793#0" expanded="true" />
+            <element signature="e#11792#11793#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2614,11 +2615,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1605#0" expanded="true" />
-            <element signature="e#1710#1718#0" expanded="true" />
-            <element signature="e#11604#11823#0" expanded="true" />
-            <element signature="e#11822#11823#0" expanded="true" />
+            <element signature="e#1565#1575#0" expanded="true" />
+            <element signature="e#1680#1688#0" expanded="true" />
+            <element signature="e#11574#11793#0" expanded="true" />
+            <element signature="e#11792#11793#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2670,11 +2670,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1605#0" expanded="true" />
-            <element signature="e#1710#1718#0" expanded="true" />
-            <element signature="e#11604#11823#0" expanded="true" />
-            <element signature="e#11822#11823#0" expanded="true" />
+            <element signature="e#1565#1575#0" expanded="true" />
+            <element signature="e#1680#1688#0" expanded="true" />
+            <element signature="e#11574#11793#0" expanded="true" />
+            <element signature="e#11792#11793#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2726,11 +2725,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1605#0" expanded="true" />
-            <element signature="e#1710#1718#0" expanded="true" />
-            <element signature="e#11604#11823#0" expanded="true" />
-            <element signature="e#11822#11823#0" expanded="true" />
+            <element signature="e#1565#1575#0" expanded="true" />
+            <element signature="e#1680#1688#0" expanded="true" />
+            <element signature="e#11574#11793#0" expanded="true" />
+            <element signature="e#11792#11793#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2740,11 +2738,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1605#0" expanded="true" />
-            <element signature="e#1710#1718#0" expanded="true" />
-            <element signature="e#11604#11823#0" expanded="true" />
-            <element signature="e#11822#11823#0" expanded="true" />
+            <element signature="e#1565#1575#0" expanded="true" />
+            <element signature="e#1680#1688#0" expanded="true" />
+            <element signature="e#11574#11793#0" expanded="true" />
+            <element signature="e#11792#11793#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2858,14 +2855,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/lye/barcodegrader/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8038194">
-          <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
+        <state vertical-scroll-proportion="-0.6504348">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1605#0" expanded="true" />
-            <element signature="e#1710#1718#0" expanded="true" />
-            <element signature="e#11604#11823#0" expanded="true" />
-            <element signature="e#11822#11823#0" expanded="true" />
+            <element signature="e#1565#1575#0" expanded="true" />
+            <element signature="e#1680#1688#0" expanded="true" />
+            <element signature="e#11574#11793#0" expanded="true" />
+            <element signature="e#11792#11793#0" expanded="true" />
           </folding>
         </state>
       </provider>
