@@ -1,6 +1,8 @@
 package lye.barcodegrader;
 
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -117,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                                     //System.out.println(csvArray.get(0)[0]); //Para mostrar una cadena en concreto: (0) para la linea, [0] para el elemento
 
                                 }
-                                System.out.println(csvArray.get(1)[0] + " - " + csvArray.get(1)[1] + " - " + csvArray.get(1)[2] + " - " + csvArray.get(1)[3] + " - " + csvArray.get(1)[4] + " - " + csvArray.get(1)[5] + " - " + csvArray.get(1)[6] + " - " + csvArray.get(1)[7] + " - ");
+                                //System.out.println(csvArray.get(1)[0] + " - " + csvArray.get(1)[1] + " - " + csvArray.get(1)[2] + " - " + csvArray.get(1)[3] + " - " + csvArray.get(1)[4] + " - " + csvArray.get(1)[5] + " - " + csvArray.get(1)[6] + " - " + csvArray.get(1)[7] + " - ");
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -218,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
 
                 for (int i = 0; i < nfil; i++){
                     for(int j = 0; j < ncol; j++){
-                        outputFile.write(csvArray.get(i)[j]);
+                        outputFile.write("\"" + csvArray.get(i)[j] + "\"");
                         if (j != ncol - 1)
                             outputFile.write(",");
                     }
@@ -264,6 +266,21 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(), "No se ha cargado ningún archivo", Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onBackPressed(){
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Confirmar cierre")
+                .setMessage("¿Seguro que quieres salir de la aplicación? Los cambios no guardados se perderán.")
+                .setPositiveButton("Sí", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                }).setNegativeButton("No", null)
+                .show();
     }
 
 
