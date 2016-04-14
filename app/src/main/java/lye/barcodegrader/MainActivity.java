@@ -180,6 +180,11 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             }
                             j++;
+                            /*
+                            if(j == autoModeArray.size()) {
+                                System.out.println(autoModeArray.get());
+                            }
+                            */
                         }
                     }
 
@@ -196,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
     public void loadCsv(View v) {
 
         Intent fileintent = new Intent(Intent.ACTION_GET_CONTENT);
-        fileintent.setType("text/csv");
+        fileintent.setType("text/plain");
         try {
             startActivityForResult(fileintent, PICKFILE_RESULT_CODE);
         } catch (ActivityNotFoundException e) {

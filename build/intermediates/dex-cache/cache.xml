@@ -6,91 +6,91 @@
         jumboMode="true"
         revision="23.0.2"
         sha1="3108762d0d26dba0f65007faacd5bc7373562547">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\android-integration-3.0.0_629796c01299873a49f30763949673702339f85b\classes.dex" />
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\android-integration-3.0.0_629796c01299873a49f30763949673702339f85b.jar" />
     </item>
     <item
         jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="1fc942712f0a75eb91c68c444b2ff888c5f20f22">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_5c8b471e23d64b93a7b118e2fd3826972cdd042d\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\exploded-aar\com.android.support\design\23.2.1\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.2.1_18e6aac763348b899ea08263d78c39e5ea67bc28\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.2.1_a8052294483a3af23a04be2c20417c0e8b1c52c0\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="d698674785246b2fd8015767077cea98dd68eae4">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7abea54debb54da72f516ae4ba13cd782ab2281b\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\ralka\.gradle\caches\modules-2\files-2.1\com.opencsv\opencsv\3.7\d5416b3a41618422e12337c2d3b6152f0cd4d311\opencsv-3.7.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="d5416b3a41618422e12337c2d3b6152f0cd4d311">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\opencsv-3.7_f5bdce3968efdbcfb50345b6f37087155fa8424f\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\ralka\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.2.1_96b027bacd46720103a42691f5ed829db94f5527\classes.dex" />
+        sha1="9841ca80dad47faa06a6ef7f549b98fb76b6df56">
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_5c8b471e23d64b93a7b118e2fd3826972cdd042d.jar" />
     </item>
     <item
         jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.1\jars\classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.2.1_b2a2bee8aca8b5685b1e84998975b389377e555b\classes.dex" />
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.2.1_b2a2bee8aca8b5685b1e84998975b389377e555b.jar" />
     </item>
     <item
         jar="C:\Program Files\Android\Android Studio\gradle\m2repository\org\apache\commons\commons-lang3\3.3.2\commons-lang3-3.3.2.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="90a3822c38ec8c996e84c16a3477ef632cbc87a3">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\commons-lang3-3.3.2_4314d5c387d123a62f2e97084dd070725c126438\classes.dex" />
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\commons-lang3-3.3.2_4314d5c387d123a62f2e97084dd070725c126438.jar" />
     </item>
     <item
         jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.2.1_b63fedf62757762939fccf665f66a3e7de18f79e\classes.dex" />
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.1_b63fedf62757762939fccf665f66a3e7de18f79e.jar" />
     </item>
     <item
         jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\jars\classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.2.1_d586175fcd5961cb7bba24fe97ad74106725e894\classes.dex" />
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.1_d586175fcd5961cb7bba24fe97ad74106725e894.jar" />
+    </item>
+    <item
+        jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\exploded-aar\com.android.support\design\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.2.1_18e6aac763348b899ea08263d78c39e5ea67bc28.jar" />
+    </item>
+    <item
+        jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.1_a8052294483a3af23a04be2c20417c0e8b1c52c0.jar" />
+    </item>
+    <item
+        jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="cc13575ba054badde75177de3ad1ec1b6c0f9654">
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\instant-run_7abea54debb54da72f516ae4ba13cd782ab2281b.jar" />
+    </item>
+    <item
+        jar="C:\Users\ralka\.gradle\caches\modules-2\files-2.1\com.opencsv\opencsv\3.7\d5416b3a41618422e12337c2d3b6152f0cd4d311\opencsv-3.7.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d5416b3a41618422e12337c2d3b6152f0cd4d311">
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\opencsv-3.7_f5bdce3968efdbcfb50345b6f37087155fa8424f.jar" />
+    </item>
+    <item
+        jar="C:\Users\ralka\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1_96b027bacd46720103a42691f5ed829db94f5527.jar" />
     </item>
     <item
         jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="673d77a5bbddd766037f088e775df525c46407f0">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.2.1_8cdae7cdc909767540633b03c9913281ea75362c\classes.dex" />
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.1_8cdae7cdc909767540633b03c9913281ea75362c.jar" />
     </item>
     <item
         jar="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\libs\internal_impl-23.2.1.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
-        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.2.1_7e3cc5a5133a670059489909dce344b129b46727\classes.dex" />
+        <dex dex="C:\Users\ralka\Documents\GitHub\Barcodegrader\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.1_7e3cc5a5133a670059489909dce344b129b46727.jar" />
     </item>
 
 </items>

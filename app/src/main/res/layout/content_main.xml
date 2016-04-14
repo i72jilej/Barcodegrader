@@ -65,18 +65,21 @@
                 android:layout_height="wrap_content"
                 android:text="0"/>
         </LinearLayout>
-
-        <Button
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cargar nuevo csv"
-            android:onClick="loadCsv"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Guardar csv"
-            android:onClick="saveCsv"/>
-
+            android:orientation="vertical">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cargar csv"
+                android:onClick="loadCsv" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar csv"
+                android:onClick="saveCsv"/>
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
