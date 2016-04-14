@@ -89,11 +89,13 @@
         android:measureWithLargestChild="false">
 
         <Button
+            android:id="@+id/manualModeButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Modo manual"
             android:onClick="startManualMode"/>
         <Button
+            android:id="@+id/autoModeButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Modo automático"

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,13 +41,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView nAlumnos;
     private TextView notaMax;
 
+    private Button manualModeButton;
+    private Button autoModeButton;
+
     //private CSVReader csvFile; //Declarado dentro de OnActivityResult (¿No va a hacer falta fuera, se trabaja con la array?)
     private ArrayList<String[]> csvArray = new ArrayList<String[]>();
 
     IntentIntegrator autoModeIntegrator;
     private ArrayList<String> autoModeArray = new ArrayList<String>();
 
-    //TODO Pedir confirmación al cerrar la aplicación
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
         archivoCargado = (TextView) findViewById(R.id.archivoCargado);
         nAlumnos = (TextView) findViewById(R.id.nAlum);
         notaMax = (TextView) findViewById(R.id.notaMax);
+
+        manualModeButton = (Button) findViewById(R.id.manualModeButton);
+        autoModeButton = (Button) findViewById(R.id.autoModeButton);
+
+        manualModeButton.setEnabled(false);
+        autoModeButton.setEnabled(false);
 
         autoModeIntegrator = new IntentIntegrator(this);
 
@@ -133,6 +142,9 @@ public class MainActivity extends AppCompatActivity {
                         archivoCargado.setText(path);                           //Ruta del fichero
                         nAlumnos.setText(String.valueOf(csvArray.size() - 1));  //Número de alumnos (-1 para quitar el encabezado)
                         notaMax.setText(csvArray.get(1)[5]);                    //Nota máxima
+
+                        manualModeButton.setEnabled(true);
+                        autoModeButton.setEnabled(true);
                     }
                     else {
                         //Avisando si el fichero no es un .csv

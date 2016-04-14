@@ -45,6 +45,7 @@ public class ManualModeActivity extends AppCompatActivity {
 
         notaMax.setText(csvArray2.get(1)[5]);
 
+        //Asignando listener
         findViewById(R.id.nota0).setOnClickListener(mGlobal_OnClickListener);
         findViewById(R.id.nota1).setOnClickListener(mGlobal_OnClickListener);
         findViewById(R.id.nota2).setOnClickListener(mGlobal_OnClickListener);
@@ -58,6 +59,37 @@ public class ManualModeActivity extends AppCompatActivity {
         findViewById(R.id.nota10).setOnClickListener(mGlobal_OnClickListener);
         findViewById(R.id.notaBorrar).setOnClickListener(mGlobal_OnClickListener);
 
+
+        /*
+        //TODO asignar listener y enabled
+        ArrayList<Button> listaBotones = new ArrayList<Button>();
+        listaBotones.add((Button) findViewById(R.id.nota0));
+        listaBotones.add((Button) findViewById(R.id.nota1));
+        listaBotones.add((Button) findViewById(R.id.nota2));
+        listaBotones.add((Button) findViewById(R.id.nota3));
+        listaBotones.add((Button) findViewById(R.id.nota4));
+        listaBotones.add((Button) findViewById(R.id.nota5));
+        listaBotones.add((Button) findViewById(R.id.nota6));
+        listaBotones.add((Button) findViewById(R.id.nota7));
+        listaBotones.add((Button) findViewById(R.id.nota8));
+        listaBotones.add((Button) findViewById(R.id.nota9));
+        listaBotones.add((Button) findViewById(R.id.nota10));
+
+        //Asignado la visibilidad y listener
+        for(int i = 0; i < 11; i++){
+            listaBotones.get(i).setOnClickListener(mGlobal_OnClickListener);
+            if(Integer.parseInt(listaBotones.get(i).getText().toString()) <
+                    Integer.parseInt(notaMax.getText().toString())){ //FIXME falla al no identificar 10,00 como integer. ¿En el listener sí funciona?
+                listaBotones.get(i).setEnabled(false);
+            }
+            else
+            {
+                listaBotones.get(i).setEnabled(true);
+            }
+        }
+
+        findViewById(R.id.notaBorrar).setOnClickListener(mGlobal_OnClickListener);
+    */
 
     }
 
