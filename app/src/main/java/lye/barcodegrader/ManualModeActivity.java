@@ -23,7 +23,7 @@ public class ManualModeActivity extends AppCompatActivity {
     private TextView nombreAlumno;
     private TextView codigoAlumno;
     private TextView notaActual;
-    private TextView notaMax;
+
     //TextView fechaEdicion;
 
     private int filaAlumno = 0;
@@ -37,7 +37,7 @@ public class ManualModeActivity extends AppCompatActivity {
         nombreAlumno = (TextView) findViewById(R.id.nombreAlumno);
         codigoAlumno = (TextView) findViewById(R.id.codigoAlumno);
         notaActual = (TextView) findViewById(R.id.notaAlumno);
-        notaMax = (TextView) findViewById(R.id.notaMaxima);
+        TextView notaMax = (TextView) findViewById(R.id.notaMaxima);
         //fechaEdicion = (TextView) findViewById(R.id.fechaEdicion);
 
         //Recibiendo intent
@@ -45,6 +45,7 @@ public class ManualModeActivity extends AppCompatActivity {
 
         notaMax.setText(csvArray2.get(1)[5]);
 
+        /*
         //Asignando listener
         findViewById(R.id.nota0).setOnClickListener(mGlobal_OnClickListener);
         findViewById(R.id.nota1).setOnClickListener(mGlobal_OnClickListener);
@@ -58,9 +59,9 @@ public class ManualModeActivity extends AppCompatActivity {
         findViewById(R.id.nota9).setOnClickListener(mGlobal_OnClickListener);
         findViewById(R.id.nota10).setOnClickListener(mGlobal_OnClickListener);
         findViewById(R.id.notaBorrar).setOnClickListener(mGlobal_OnClickListener);
+        */
 
 
-        /*
         //TODO asignar listener y enabled
         ArrayList<Button> listaBotones = new ArrayList<Button>();
         listaBotones.add((Button) findViewById(R.id.nota0));
@@ -78,18 +79,18 @@ public class ManualModeActivity extends AppCompatActivity {
         //Asignado la visibilidad y listener
         for(int i = 0; i < 11; i++){
             listaBotones.get(i).setOnClickListener(mGlobal_OnClickListener);
-            if(Integer.parseInt(listaBotones.get(i).getText().toString()) <
-                    Integer.parseInt(notaMax.getText().toString())){ //FIXME falla al no identificar 10,00 como integer. ¿En el listener sí funciona?
-                listaBotones.get(i).setEnabled(false);
+            if(Integer.parseInt(listaBotones.get(i).getText().toString()) <=
+                    Double.parseDouble(notaMax.getText().toString())){ //FIXME falla al no identificar 10,00 como integer. ¿En el listener sí funciona?
+                listaBotones.get(i).setEnabled(true);
             }
             else
             {
-                listaBotones.get(i).setEnabled(true);
+                listaBotones.get(i).setEnabled(false);
             }
         }
 
         findViewById(R.id.notaBorrar).setOnClickListener(mGlobal_OnClickListener);
-    */
+
 
     }
 
@@ -188,14 +189,11 @@ public class ManualModeActivity extends AppCompatActivity {
                     notaActual.setText(notaPantalla);
                     csvArray2.get(filaAlumno)[4] = notaCSV;
                 } else {
-                    if(Integer.parseInt(boton.getText().toString()) <= Integer.parseInt(notaMax.getText().toString())) {
                         notaPantalla = boton.getText().toString();
                         notaCSV = notaPantalla;
                         notaActual.setText(notaPantalla);
                         csvArray2.get(filaAlumno)[4] = notaCSV;
                     }
-                }
-
 
             } else {
                 Toast.makeText(getApplicationContext(), "No se ha cargado ningún alumno", Toast.LENGTH_LONG).show();
