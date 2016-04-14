@@ -157,36 +157,71 @@ public class MainActivity extends AppCompatActivity {
             case IntentIntegrator.REQUEST_CODE:
                 //http://stackoverflow.com/questions/15892461/how-to-trigger-bulk-mode-scan-in-zxing
                 if (resultCode == RESULT_OK) {
-                    System.out.println("OK");
                     IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
                     String codigo = intentResult.getContents(); //Pescando el código escaneado en esta vuelta
 
-                    autoModeArray.add(codigo);
+                    if(!autoModeArray.contains(codigo)) { //Evitando duplicados
+                        autoModeArray.add(codigo);
+                    }
+
 
                     autoModeIntegrator.initiateScan(); //Relanzar escaner
 
                 } else if (resultCode == RESULT_CANCELED) {
-                    System.out.println("BACK");
+                    //System.out.println("BACK");
+                    String codigo;
                     int j;
-                    String correo;
+                    int pos;
+
                     for (int i = 1; i < csvArray.size(); i++) { //Desde i = 1 para saltarnos la fila con los encabezados de columna
                         //System.out.println(csvArray.get(i)[2]);
+
+                        //==MODO PRIMERO
+                        /*
                         j = 0;
                         while(j < autoModeArray.size()){
                             //System.out.println("-->" + autoModeArray.get(j));
+
                             if(csvArray.get(i)[2].equals(autoModeArray.get(j) + "@uco.es")) {
                                 //System.out.println("COINCIDE");
                                 csvArray.get(i)[4] = csvArray.get(1)[5];
                                 break;
                             }
                             j++;
-                            /*
-                            if(j == autoModeArray.size()) {
-                                System.out.println(autoModeArray.get());
-                            }
-                            */
                         }
+                        */
+                        //======
+
+                        //==MODO SEGUNDO
+                        codigo = csvArray.get(i)[2].substring(0,csvArray.get(i)[2].length() - 7);
+                        if((pos=autoModeArray.indexOf(codigo)) != -1){
+                            //System.out.println(autoModeArray.get(pos) + "  COINCIDE");
+                            //Modificar su línea en csvArray
+                            csvArray.get(i)[4] = csvArray.get(1)[5];
+                            //Sacarlo de autoModeArray
+                            autoModeArray.remove(pos);
+                        }
+
+                        //======
                     }
+                    if(autoModeArray.size() != 0)
+                    {
+                        //MOSTRAR MENSAJE DE QUE HAY ALUMNOS QUE NO ESTÄN EN EL CSV
+                        String alumnosNoCSV = "";
+
+                        for(int i = 0; i < autoModeArray.size(); i++){
+                            alumnosNoCSV = alumnosNoCSV + autoModeArray.get(i) + " ";
+                        }
+
+                        new AlertDialog.Builder(this)
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .setTitle("Hay alumnos no registrados")
+                                .setMessage("Los siguientes alumnos escaneados no se encuentran en el csv: " + alumnosNoCSV)
+                                .setNegativeButton("Ok", null)
+                                .show();
+                    }
+
+                    autoModeArray.clear();
 
                 }
 

@@ -37,11 +37,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2efc095-160a-460d-a3d4-effb2ce833f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/lye/barcodegrader/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/lye/barcodegrader/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="Barcodegrader.iws" />
@@ -73,12 +70,12 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/lye/barcodegrader/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6948229">
-              <caret line="186" column="30" selection-start-line="186" selection-start-column="30" selection-end-line="186" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.55654764">
+              <caret line="219" column="54" selection-start-line="219" selection-start-column="54" selection-end-line="219" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#11801#12020#0" expanded="true" />
-                <element signature="e#12019#12020#0" expanded="true" />
+                <element signature="e#13288#13507#0" expanded="true" />
+                <element signature="e#13506#13507#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2100,7 +2097,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460487855571</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Cambiado el settype">
+      <created>1460625608652</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1460625608652</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2122,14 +2125,14 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.28144988" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32593855" sideWeight="0.71331316" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37883958" sideWeight="0.71331316" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22012103" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.6934968" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.75113463" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.47867805" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32593855" sideWeight="0.28668684" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37883958" sideWeight="0.28668684" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24886535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2173,7 +2176,8 @@
     <MESSAGE value="Terminado el modo automático&#10;Falla el tema de las , al crear el archivo csv" />
     <MESSAGE value="Arreglado problema de , en el csv&#10;Añadido diálogo de confirmación al cierre." />
     <MESSAGE value="Quitado el menú de opciones al inicio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quitado el menú de opciones al inicio" />
+    <MESSAGE value="Cambiado el settype" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiado el settype" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2196,8 +2200,8 @@
           <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11801#12020#0" expanded="true" />
-            <element signature="e#12019#12020#0" expanded="true" />
+            <element signature="e#13288#13507#0" expanded="true" />
+            <element signature="e#13506#13507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2254,8 +2258,8 @@
           <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11801#12020#0" expanded="true" />
-            <element signature="e#12019#12020#0" expanded="true" />
+            <element signature="e#13288#13507#0" expanded="true" />
+            <element signature="e#13506#13507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2312,8 +2316,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11801#12020#0" expanded="true" />
-            <element signature="e#12019#12020#0" expanded="true" />
+            <element signature="e#13288#13507#0" expanded="true" />
+            <element signature="e#13506#13507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2370,8 +2374,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11801#12020#0" expanded="true" />
-            <element signature="e#12019#12020#0" expanded="true" />
+            <element signature="e#13288#13507#0" expanded="true" />
+            <element signature="e#13506#13507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2428,8 +2432,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11801#12020#0" expanded="true" />
-            <element signature="e#12019#12020#0" expanded="true" />
+            <element signature="e#13288#13507#0" expanded="true" />
+            <element signature="e#13506#13507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2486,8 +2490,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11801#12020#0" expanded="true" />
-            <element signature="e#12019#12020#0" expanded="true" />
+            <element signature="e#13288#13507#0" expanded="true" />
+            <element signature="e#13506#13507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2544,8 +2548,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11801#12020#0" expanded="true" />
-            <element signature="e#12019#12020#0" expanded="true" />
+            <element signature="e#13288#13507#0" expanded="true" />
+            <element signature="e#13506#13507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2602,8 +2606,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11801#12020#0" expanded="true" />
-            <element signature="e#12019#12020#0" expanded="true" />
+            <element signature="e#13288#13507#0" expanded="true" />
+            <element signature="e#13506#13507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2614,8 +2618,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11801#12020#0" expanded="true" />
-            <element signature="e#12019#12020#0" expanded="true" />
+            <element signature="e#13288#13507#0" expanded="true" />
+            <element signature="e#13506#13507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2739,12 +2743,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/lye/barcodegrader/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6948229">
-          <caret line="186" column="30" selection-start-line="186" selection-start-column="30" selection-end-line="186" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.55654764">
+          <caret line="219" column="54" selection-start-line="219" selection-start-column="54" selection-end-line="219" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11801#12020#0" expanded="true" />
-            <element signature="e#12019#12020#0" expanded="true" />
+            <element signature="e#13288#13507#0" expanded="true" />
+            <element signature="e#13506#13507#0" expanded="true" />
           </folding>
         </state>
       </provider>
