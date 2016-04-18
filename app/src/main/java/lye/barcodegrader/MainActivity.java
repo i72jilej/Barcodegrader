@@ -30,12 +30,15 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Mensajes para Intents
     static final String EXTRA_MESSAGE =  "lye.barcodegrader.EXTRA_MESSAGE";
     static final String EXTRA_MESSAGE_2 =  "lye.barcodegrader.EXTRA_MESSAGE_2"; //TODO Probar si funciona con el mismo mensaje en ambos intents
 
+    //Códigos para onActivityResult
     private static final int PICKFILE_RESULT_CODE = 1;
     static final int MANUAL_MODE_CODE = 2;
 
+    //Widgets
     private String path = "(sin archivo)";
     private TextView archivoCargado;
     private TextView nAlumnos;
@@ -44,9 +47,10 @@ public class MainActivity extends AppCompatActivity {
     private Button manualModeButton;
     private Button autoModeButton;
 
-    //private CSVReader csvFile; //Declarado dentro de OnActivityResult (¿No va a hacer falta fuera, se trabaja con la array?)
+    //ArrayList donde guardar el fichero csv con el que se trabaja
     private ArrayList<String[]> csvArray = new ArrayList<String[]>();
 
+    //Intent y ArrayList para los escaneos
     IntentIntegrator autoModeIntegrator;
     private ArrayList<String> autoModeArray = new ArrayList<String>();
 
@@ -57,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Cargando widgets
         archivoCargado = (TextView) findViewById(R.id.archivoCargado);
         nAlumnos = (TextView) findViewById(R.id.nAlum);
         notaMax = (TextView) findViewById(R.id.notaMax);
@@ -64,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         manualModeButton = (Button) findViewById(R.id.manualModeButton);
         autoModeButton = (Button) findViewById(R.id.autoModeButton);
 
+        //Inicializando los botones de los dos modos como ocultos (al cargar la aplicación, no hay ningún csv cargado)
         manualModeButton.setEnabled(false);
         autoModeButton.setEnabled(false);
 
@@ -105,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         //if (data == null)
             //return;
         switch (requestCode) {
+            //Al volver desde el explorador de archivos tras elegir el csv con el que trabajar
             case PICKFILE_RESULT_CODE:
                 if (resultCode == RESULT_OK) {
                     //Recogiendo ruta del fichero que cargaremos
@@ -114,13 +121,13 @@ public class MainActivity extends AppCompatActivity {
                     //TODO ¿Comprobar realmente el fichero y no solo la extensión?
                     if(path.substring(path.length()-4, path.length()).equals(".csv")) {
                         try {
-                            //TODO Comprobar estructura del documento
+                            //TODO ¿Comprobar estructura del documento?
 
                             //Abriendo fichero
                             csvFile = new CSVReader(new FileReader(path));
                             String[] nextLine;
 
-                            //Vaciando array de datos (solo llegamos aquí si el fichero que abrimos es correcto)
+                            //Vaciando array de datos previo (solo llegamos aquí si el fichero que abrimos es correcto)
                             csvArray.clear();
 
                             try {
@@ -131,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
                                     //System.out.println(csvArray.get(0)[0]); //Para mostrar una cadena en concreto: (0) para la linea, [0] para el elemento
 
                                 }
-                                //System.out.println(csvArray.get(1)[0] + " - " + csvArray.get(1)[1] + " - " + csvArray.get(1)[2] + " - " + csvArray.get(1)[3] + " - " + csvArray.get(1)[4] + " - " + csvArray.get(1)[5] + " - " + csvArray.get(1)[6] + " - " + csvArray.get(1)[7] + " - ");
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -143,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
                         nAlumnos.setText(String.valueOf(csvArray.size() - 1));  //Número de alumnos (-1 para quitar el encabezado)
                         notaMax.setText(csvArray.get(1)[5]);                    //Nota máxima
 
+                        //Activando la visibilidad de los botones de modo de escaneo (Ya hay un archivo cargado y listo)
                         manualModeButton.setEnabled(true);
                         autoModeButton.setEnabled(true);
                     }
@@ -157,17 +164,19 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
 
+            // Al volver desde la activity del modo manual
             case MANUAL_MODE_CODE:
-
                 //Actualizamos nuestro csvArray con el que se devuelve ya modificado
                 //System.out.println("ESTAMOS EN MANUAL_MODE_CODE");
-                csvArray.clear();//¿sobra esto?
+                csvArray.clear();
                 csvArray = (ArrayList<String[]>) data.getSerializableExtra(EXTRA_MESSAGE_2);
 
                 break;
 
+            //Al volver desde CADA UNA de las llamadas al escáner del modo automático
             case IntentIntegrator.REQUEST_CODE:
                 //http://stackoverflow.com/questions/15892461/how-to-trigger-bulk-mode-scan-in-zxing
+                //Si se ha leido un código de barras
                 if (resultCode == RESULT_OK) {
                     IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
                     String codigo = intentResult.getContents(); //Pescando el código escaneado en esta vuelta
@@ -179,32 +188,17 @@ public class MainActivity extends AppCompatActivity {
 
                     autoModeIntegrator.initiateScan(); //Relanzar escaner
 
+                //Si se ha pulsado "atrás" desde el escáner
                 } else if (resultCode == RESULT_CANCELED) {
                     //System.out.println("BACK");
                     String codigo;
                     int j;
                     int pos;
 
+                    //Analizando la lista de códigos escaneada en autoModeArray
                     for (int i = 1; i < csvArray.size(); i++) { //Desde i = 1 para saltarnos la fila con los encabezados de columna
                         //System.out.println(csvArray.get(i)[2]);
 
-                        //==MODO PRIMERO
-                        /*
-                        j = 0;
-                        while(j < autoModeArray.size()){
-                            //System.out.println("-->" + autoModeArray.get(j));
-
-                            if(csvArray.get(i)[2].equals(autoModeArray.get(j) + "@uco.es")) {
-                                //System.out.println("COINCIDE");
-                                csvArray.get(i)[4] = csvArray.get(1)[5];
-                                break;
-                            }
-                            j++;
-                        }
-                        */
-                        //======
-
-                        //==MODO SEGUNDO
                         codigo = csvArray.get(i)[2].substring(0,csvArray.get(i)[2].length() - 7);
                         if((pos=autoModeArray.indexOf(codigo)) != -1){
                             //System.out.println(autoModeArray.get(pos) + "  COINCIDE");
@@ -216,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
                         //======
                     }
+                    //Si queda algún elemento en autoModeArray es que éste no estava en el csv cargado
                     if(autoModeArray.size() != 0)
                     {
                         //MOSTRAR MENSAJE DE QUE HAY ALUMNOS QUE NO ESTÄN EN EL CSV
@@ -241,14 +236,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
-        //System.out.println(RESULT_OK + " - " + RESULT_CANCELED);
-        //System.out.println(requestCode + " - " + IntentIntegrator.REQUEST_CODE);
     }
 
+    //On Click para el botón de cargar csv
     public void loadCsv(View v) {
 
         Intent fileintent = new Intent(Intent.ACTION_GET_CONTENT);
-        fileintent.setType("text/plain");
+        fileintent.setType("text/plain"); //Error con Android 6 aquí??
         try {
             startActivityForResult(fileintent, PICKFILE_RESULT_CODE);
         } catch (ActivityNotFoundException e) {
@@ -258,21 +252,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //OnClick para el botón de guardar el csv
     public void saveCsv(View v){
         Date date = new Date();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd_HH-mm");
 
         //TODO ¿Conseguir que si abres un archivo ya corregido, no ponga otra coletilla -graded al final de la anterior?
+        //Si hay un archivo cargado
         if (!path.equals("(sin archivo)")) {
-            //Si hay un archivo cargado
+            //Reescribiendo nombre de archivo
             String outPath = path.substring(0, path.length()-4) +"-graded_" + format.format(date) + ".csv";
             Writer outputFile = null;
 
             try {
                 outputFile = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outPath), "UTF-8"));
-                int nfil = csvArray.size(); //NullPointerException aquí tras haber hecho Modo Manual
+                int nfil = csvArray.size();
                 int ncol = csvArray.get(0).length;
 
+                //Recorriendo csvArray y escribiendo elemento a elemento
                 for (int i = 0; i < nfil; i++){
                     for(int j = 0; j < ncol; j++){
                         outputFile.write("\"" + csvArray.get(i)[j] + "\"");
@@ -297,6 +294,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //OnClick para el botón de modo manual
     public void startManualMode(View v)
     {
         //Comrpobamos si se ha cargado algún archivo
@@ -314,6 +312,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //OnClick para el botón de modo automático
     public void startAutoMode(View v) {
         //Comrpobamos si se ha cargado algún archivo
         if(!path.equals("(sin archivo)")) {
@@ -323,6 +322,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Mensaje de confirmación al cerrar la aplicación
     @Override
     public void onBackPressed(){
         new AlertDialog.Builder(this)
