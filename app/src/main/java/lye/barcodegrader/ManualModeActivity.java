@@ -43,7 +43,9 @@ public class ManualModeActivity extends AppCompatActivity {
         //Recibiendo intent
         csvArray2 = (ArrayList<String[]>) getIntent().getSerializableExtra(MainActivity.EXTRA_MESSAGE_2);
 
-        notaMax.setText(csvArray2.get(1)[5]);
+        // XXX Aqui habria que hacerlo generico para buscar las columnas:
+        //   Email (2), Calificacion (6) y Calificacion máxima (7)
+        notaMax.setText(csvArray2.get(1)[7]);
 
         ArrayList<Button> listaBotones = new ArrayList<Button>();
         listaBotones.add((Button) findViewById(R.id.nota0));
@@ -120,13 +122,15 @@ public class ManualModeActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Alumno no encontrado en el fichero cargado", Toast.LENGTH_LONG).show();
                 }
                 else {
+                    // Aqui habria que hacerlo generico para buscar las columnas:
+                    //   Email (2), Calificacion (6) y Calificacion máxima (7)
                     nombreAlumno.setText(csvArray2.get(filaAlumno)[1]);
                     codigoAlumno.setText(csvArray2.get(filaAlumno)[2].replace("@uco.es",""));
-                    if (csvArray2.get(filaAlumno)[4].equals("")) {
+                    if (csvArray2.get(filaAlumno)[6].equals("")) {
                         notaActual.setText("-");
                     }
                     else {
-                        notaActual.setText(csvArray2.get(filaAlumno)[4]);
+                        notaActual.setText(csvArray2.get(filaAlumno)[6]);
                     }
                 }
 
@@ -167,17 +171,19 @@ public class ManualModeActivity extends AppCompatActivity {
             String notaCSV;
 
             if(filaAlumno != 0){
+                // Aqui habria que hacerlo generico para buscar las columnas:
+                //   Email (2), Calificacion (6) y Calificacion máxima (7)
                 if (boton.getText().equals("Borrar")) {
                     notaPantalla = "-";
                     notaCSV = "";
                     notaActual.setText(notaPantalla);
-                    csvArray2.get(filaAlumno)[4] = notaCSV;
+                    csvArray2.get(filaAlumno)[6] = notaCSV;
                 } else {
-                        notaPantalla = boton.getText().toString();
-                        notaCSV = notaPantalla;
-                        notaActual.setText(notaPantalla);
-                        csvArray2.get(filaAlumno)[4] = notaCSV;
-                    }
+                    notaPantalla = boton.getText().toString();
+                    notaCSV = notaPantalla;
+                    notaActual.setText(notaPantalla);
+                    csvArray2.get(filaAlumno)[6] = notaCSV;
+                }
 
             } else {
                 Toast.makeText(getApplicationContext(), "No se ha cargado ningún alumno", Toast.LENGTH_LONG).show();

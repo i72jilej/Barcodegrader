@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                                 //Mostrando los datos del fichero en el TextView si to.do ha ido bien
                                 archivoCargado.setText(Uri.decode(inputUri.toString()));                 // Ruta del fichero
                                 nAlumnos.setText(String.valueOf(csvArray.size() - 1));  // Número de alumnos (-1 para quitar el encabezado)
-                                notaMax.setText(csvArray.get(1)[5]);                    // Nota máxima
+                                notaMax.setText(csvArray.get(1)[6]);                    // Nota máxima
 
                                 //Activando la visibilidad de los botones de modo de escaneo (Ya hay un archivo cargado y listo)
                                 manualModeButton.setEnabled(true);
@@ -219,11 +219,13 @@ public class MainActivity extends AppCompatActivity {
                     for (int i = 1; i < csvArray.size(); i++) { //Desde i = 1 para saltarnos la fila con los encabezados de columna
                         //System.out.println(csvArray.get(i)[2]);
 
+                        // Aqui habria que hacerlo generico para buscar las columnas:
+                        //   Email (2), Calificacion (6) y Calificacion máxima (7)
                         codigo = csvArray.get(i)[2].substring(0, csvArray.get(i)[2].length() - 7);
                         if ((pos = autoModeArray.indexOf(codigo)) != -1) {
                             //System.out.println(autoModeArray.get(pos) + "  COINCIDE");
                             //Modificar su línea en csvArray
-                            csvArray.get(i)[4] = csvArray.get(1)[5];
+                            csvArray.get(i)[6] = csvArray.get(1)[7];
                             //Sacarlo de autoModeArray
                             autoModeArray.remove(pos);
                         }
@@ -267,11 +269,18 @@ public class MainActivity extends AppCompatActivity {
                             //Recorriendo csvArray y escribiendo elemento a elemento
                             for (int i = 0; i < nfil; i++) {
                                 for (int j = 0; j < ncol; j++) {
-                                    writer.write("\"" + csvArray.get(i)[j] + "\"");
+                                    String valueStr = csvArray.get(i)[j];
+                                    // Avoid a problem when CSVreader includes BOM in first field
+                                    if (valueStr. contains(" ") ||  valueStr.contains(",")) {
+                                        writer.write("\"" + valueStr + "\"");
+                                    }
+                                    else {
+                                        writer.write(valueStr);
+                                    }
                                     if (j != ncol - 1)
                                         writer.write(",");
                                 }
-                                writer.write("\r\n");
+                                writer.write("\n");
                             }
 
                             writer.close();
